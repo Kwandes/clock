@@ -1,8 +1,15 @@
-const canvasElement = document.getElementById("canvas");
+//const canvas = document.getElementById("canvas");
+//const context = canvas.getContext("2d");
+const canvas = document.getElementById("canvas");
 const context = canvas.getContext("2d");
 
 window.addEventListener("load", () => {
-  initCanvas();
+  if (!initCanvas()) {
+    console.error(
+      "Canvas has not been initialized properly. Stopping the application..."
+    );
+    return;
+  }
   doIndexStuff();
 });
 
@@ -13,13 +20,29 @@ window.addEventListener("resize", () => {
 });
 
 function initCanvas() {
-  canvasElement.width = window.innerWidth;
-  canvasElement.height = window.innerHeight;
+  // Validate that the client browser supports WebGL for 3D rendering
+  if (!isWebGLSupported()) {
+    alert(
+      "Your browser does not support required features (WebGL). Please switch to a modern browser or enable webGL" +
+        " (https://support.biodigital.com/hc/en-us/articles/218322977-How-to-turn-on-WebGL-in-my-browser)"
+    );
+    console.error(
+      "Your browser does not support required features (WebGL). Please switch to a modern browser or enable WebGL" +
+        " (https://support.biodigital.com/hc/en-us/articles/218322977-How-to-turn-on-WebGL-in-my-browser)"
+    );
+    console.error("no, Internet Explorer is not a modern browser");
+    return false;
+  }
+
+  // Set the initial Canvas values
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
   context.save(); // Save the initial state of the canvas
   context.fillStyle = "lightblue";
-  context.fillRect(0, 0, canvasElement.width, canvasElement.height);
-  context.restore(); // Remove the lightblue fill
+  context.fillRect(0, 0, canvas.width, canvas.height);
+  context.restore(); // Remove the lightblue fill styling
   // The combo of save-restore is used throughout the app to ensure no accidental styling overlap (old elements applying styling to new ones)
+  return true;
 }
 
 function doIndexStuff() {
@@ -36,16 +59,16 @@ function messWithCanvas() {
   context.save();
   // Paint the purple rectangle
   context.fillStyle = "purple";
-  console.log((canvasElement.width / 8) * 7);
+  console.log((canvas.width / 8) * 7);
   context.shadowColor = "black";
   context.shadowBlur = 10;
   context.shadowOffsetX = -2;
   context.shadowOffsetY = 2;
   context.fillRect(
-    canvasElement.width / 8,
-    canvasElement.height / 8,
-    (canvasElement.width / 8) * 6,
-    (canvasElement.height / 8) * 6
+    canvas.width / 8,
+    canvas.height / 8,
+    (canvas.width / 8) * 6,
+    (canvas.height / 8) * 6
   );
   context.restore();
 
@@ -56,10 +79,10 @@ function messWithCanvas() {
   context.shadowOffsetX = -1;
   context.shadowOffsetY = 1;
   context.fillRect(
-    canvasElement.width / 4,
-    canvasElement.height / 4,
-    canvasElement.width / 2,
-    canvasElement.height / 2
+    canvas.width / 4,
+    canvas.height / 4,
+    canvas.width / 2,
+    canvas.height / 2
   );
   context.restore();
 
@@ -68,4 +91,12 @@ function messWithCanvas() {
 
 function doClickyStuff() {
   console.log("yeet");
+}
+
+function isWebGLSupported() {
+  var canvas = document.createElement("canvas");
+  var gl =
+    canvas.getContext("webgl") || canvas.getContext("experimental-webgl");
+
+  return gl && gl instanceof WebGLRenderingContext;
 }
