@@ -7,7 +7,7 @@ const flatEarth = {
     startPosY = y;
     // calculate rotation per frame
     rotation = Math.PI/(180/rotationPerSecond*fps);
-    image.src = "/assets/earth.png";
+    image.src = "assets/earth.png";
     image.onload = function() {
         earthCenterX = x + image.width/2;
         earthCenterY = y + image.height/2;
