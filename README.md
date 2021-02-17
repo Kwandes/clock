@@ -17,8 +17,8 @@ Simply open the index.html in your preffered browser. As long as it's not Intern
 
 ### Live Reloading
 The app is livereloading-compatible. Use [Budo](https://github.com/mattdesl/budo) to easy run your app while testing.\
-To run the app run this command in the project root directory\
-`npx budo src/index.js --live --open`\
+To run the app run this command in the source root directory _(where your index.js is)_\
+`npx budo index.js --live --open`\
 This will automatically run and open the app in your browser.
 
 ## License
