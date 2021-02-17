@@ -50,6 +50,7 @@ function doIndexStuff() {
 
   context.save();
   messWithCanvas();
+  drawFlatEarth();
   context.restore();
 
   console.log("%cI'm finished, cya", "color: violet");
@@ -99,4 +100,15 @@ function isWebGLSupported() {
     canvas.getContext("webgl") || canvas.getContext("experimental-webgl");
 
   return gl && gl instanceof WebGLRenderingContext;
+}
+
+// draw a rotating image of earth. It rotates indefnitely at a set framerate
+function drawFlatEarth() {
+  context.save();
+  const framesPerSecond = 60;
+  rotationPerSecond = 90;
+  let earthInterval = setInterval(() => {
+    flatEarth.draw(context, 10, 10, rotationPerSecond, framesPerSecond);
+  }, 1000 / framesPerSecond);
+  context.restore();
 }
