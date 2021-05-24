@@ -39,7 +39,7 @@ function initCanvas() {
 
   // Set the initial Canvas values
   canvas.width = window.innerWidth;
-  canvas.height = window.innerHeight - 200;
+  canvas.height = window.innerHeight;
   context.fillStyle = "#" + getHexFromSliders();
   context.fillRect(0, 0, canvas.width, canvas.height);
   return true;
