@@ -8,6 +8,8 @@ function funkyTime() {
   console.log("Let's get funky");
   console.log("Start time: " + startTime);
 
+  document.getElementById("speed-slider").style.display = "inline";
+
   initCanvas();
   messWithCanvas();
 }
@@ -47,7 +49,7 @@ function messWithCanvas() {
   const framesPerSecond = 60;
   let counter = 0;
   let timeInterval = setInterval(() => {
-    t = counter / 100; // can be used to control the speed of the animation
+    t = counter / document.getElementById("sliderSpeed").value; // can be used to control the speed of the animation. 100 is slow, 1000 is very fast
     s = 480;
     c = canvas;
     x = context;
