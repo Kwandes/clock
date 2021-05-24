@@ -8,11 +8,6 @@ function funkyTime() {
   console.log("Let's get funky");
   console.log("Start time: " + startTime);
 
-  const framesPerSecond = 60;
-  let timeInterval = setInterval(() => {
-    //console.log('Current time: ' + (new Date().getTime() - startTime));
-  }, 1000 / framesPerSecond);
-
   initCanvas();
   messWithCanvas();
 }
@@ -36,15 +31,15 @@ function initCanvas() {
     var canvas = document.createElement("canvas");
     var gl =
       canvas.getContext("webgl") || canvas.getContext("experimental-webgl");
-  
+
     return gl && gl instanceof WebGLRenderingContext;
   }
-  
+
   // Set the initial Canvas values
   canvas.width = window.innerWidth;
-  canvas.height = window.innerHeight;
+  canvas.height = window.innerHeight - 200;
   context.save(); // Save the initial state of the canvas
-  context.fillStyle = "lightblue";
+  context.fillStyle = "#" + getHexFromSliders();
   context.fillRect(0, 0, canvas.width, canvas.height);
   context.restore(); // Remove the lightblue fill styling
   // The combo of save-restore is used throughout the app to ensure no accidental styling overlap (old elements applying styling to new ones)
@@ -52,6 +47,37 @@ function initCanvas() {
 }
 
 function messWithCanvas() {
+  const framesPerSecond = 60;
+  let counter = 0;
+  let timeInterval = setInterval(() => {
+    //console.log('Current time: ' + (new Date().getTime() - startTime));
+    //t = (new Date().getTime() - startTime) % 1000; // elapsed time in seconds
+    t = counter / 100; // can be used to control the speed of the animation
+    s = 480;
+    c = canvas;
+    x = context;
+    //S = Math.sin();
+    //C = Math.cos();
+    //T = Math.tan();
+    /*R = (red, green, blue) =>  {
+        return `rgba(${red}, ${green}, ${blue})`;
+    } ;*/
+    for (
+      c.width |= i = a = 540;
+      i--;
+      x.fillRect(
+        window.innerWidth / 2 + a * Math.sin((v = i >> 2)) * Z,
+        a + a * Math.cos(v) * Z,
+        (b = Z * 50),
+        b
+      )
+    )
+      (Z = 99 / (((i - t * 99) % a) + a)),
+        (x.fillStyle = `hsl(${i},99%,${a / Z / 20 - (i % 4) * 9}%`);
+    counter++;
+  }, 1000 / framesPerSecond);
+
+  /*
   context.save();
   // Paint the purple rectangle
   context.fillStyle = "purple";
@@ -81,6 +107,5 @@ function messWithCanvas() {
     canvas.height / 2
   );
   context.restore();
-
-  document.addEventListener("click", doClickyStuff);
+  */
 }
