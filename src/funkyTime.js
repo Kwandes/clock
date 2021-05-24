@@ -38,11 +38,8 @@ function initCanvas() {
   // Set the initial Canvas values
   canvas.width = window.innerWidth;
   canvas.height = window.innerHeight - 200;
-  context.save(); // Save the initial state of the canvas
   context.fillStyle = "#" + getHexFromSliders();
   context.fillRect(0, 0, canvas.width, canvas.height);
-  context.restore(); // Remove the lightblue fill styling
-  // The combo of save-restore is used throughout the app to ensure no accidental styling overlap (old elements applying styling to new ones)
   return true;
 }
 
@@ -50,18 +47,10 @@ function messWithCanvas() {
   const framesPerSecond = 60;
   let counter = 0;
   let timeInterval = setInterval(() => {
-    //console.log('Current time: ' + (new Date().getTime() - startTime));
-    //t = (new Date().getTime() - startTime) % 1000; // elapsed time in seconds
     t = counter / 100; // can be used to control the speed of the animation
     s = 480;
     c = canvas;
     x = context;
-    //S = Math.sin();
-    //C = Math.cos();
-    //T = Math.tan();
-    /*R = (red, green, blue) =>  {
-        return `rgba(${red}, ${green}, ${blue})`;
-    } ;*/
     for (
       c.width |= i = a = 540;
       i--;
@@ -76,36 +65,4 @@ function messWithCanvas() {
         (x.fillStyle = `hsl(${i},99%,${a / Z / 20 - (i % 4) * 9}%`);
     counter++;
   }, 1000 / framesPerSecond);
-
-  /*
-  context.save();
-  // Paint the purple rectangle
-  context.fillStyle = "purple";
-  console.log((canvas.width / 8) * 7);
-  context.shadowColor = "black";
-  context.shadowBlur = 10;
-  context.shadowOffsetX = -2;
-  context.shadowOffsetY = 2;
-  context.fillRect(
-    canvas.width / 8,
-    canvas.height / 8,
-    (canvas.width / 8) * 6,
-    (canvas.height / 8) * 6
-  );
-  context.restore();
-
-  // Paint the yellow rectangle
-  context.fillStyle = "yellow";
-  context.shadowColor = "black";
-  context.shadowBlur = 6;
-  context.shadowOffsetX = -1;
-  context.shadowOffsetY = 1;
-  context.fillRect(
-    canvas.width / 4,
-    canvas.height / 4,
-    canvas.width / 2,
-    canvas.height / 2
-  );
-  context.restore();
-  */
 }
