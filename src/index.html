@@ -1,14 +1,25 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Clock</title>
-    <link rel="stylesheet" href="styles/index.css" />
-  </head>
-  <body>
-    <canvas id="canvas"> </canvas>
-    <script src="index.js"></script>
-    <script src="flatearth.js"></script>
-  </body>
+<html>
+<body>
+
+<canvas id="canvas"></canvas>
+
+
+<h1 class=text-uppercase>hex color :<span id="hex-value">test</span></h1>
+
+<div class="slidecontainer">
+  <input type="range" min="0" max="255" value="50" class="slider" id="sliderRed">
+  <span id="sliderRedValue">N/A</span>
+</div>
+<div class="slidecontainer">
+  <input type="range" min="0" max="255" value="50" class="slider" id="sliderGreen">
+  <span id="sliderGreenValue">N/A</span>
+</div>
+<div class="slidecontainer">
+  <input type="range" min="0" max="255" value="50" class="slider" id="sliderBlue">
+  <span id="sliderBlueValue">N/A</span>
+</div>
+
+<script src="index.js"></script>
+</body>
 </html>
