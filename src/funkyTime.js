@@ -53,12 +53,15 @@ function messWithCanvas() {
     s = 480;
     c = canvas;
     x = context;
+    // this is based on a dweet from dwetter.net
+    // I've simply replicated how dwetter works
+    // original creator: https://www.dwitter.net/d/22830
     for (
       c.width |= i = a = 540;
       i--;
       x.fillRect(
         window.innerWidth / 2 + a * Math.sin((v = i >> 2)) * Z,
-        a + a * Math.cos(v) * Z,
+        a + a * Math.cos(v) * Z - 100,
         (b = Z * 50),
         b
       )
