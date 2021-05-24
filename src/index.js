@@ -53,6 +53,8 @@ function doIndexStuff() {
   drawFlatEarth();
   context.restore();
 
+
+
   console.log("%cI'm finished, cya", "color: violet");
 }
 
@@ -74,7 +76,12 @@ function messWithCanvas() {
   context.restore();
 
   // Paint the yellow rectangle
-  context.fillStyle = "yellow";
+  
+  const min = 0;
+  const max = 16777215;
+  let colorInHex = random(min, max).toString(16);
+  console.log(`#${colorInHex}`);
+  context.fillStyle = `#${colorInHex}`;
   context.shadowColor = "black";
   context.shadowBlur = 6;
   context.shadowOffsetX = -1;
@@ -111,4 +118,14 @@ function drawFlatEarth() {
     flatEarth.draw(context, 10, 10, rotationPerSecond, framesPerSecond);
   }, 1000 / framesPerSecond);
   context.restore();
+}
+
+function random(min, max)
+{
+  return Math.floor((Math.random() * max) + min); 
+}
+
+function toHex(decimal)
+{
+  return decimal.toString(16); 
 }
