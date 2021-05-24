@@ -1,25 +1,31 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <link rel="stylesheet" href="styles/index.css"></link>
+  </head>
 <body>
 
-<canvas id="canvas"></canvas>
+<div id="hex-wrapper">
+<h1 class="hex-color-info">hex color :<span id="hex-value">test</span></h1>
 
-
-<h1 class=text-uppercase>hex color :<span id="hex-value">test</span></h1>
-
-<div class="slidecontainer">
+<div class="slider-container">
   <input type="range" min="0" max="255" value="50" class="slider" id="sliderRed">
   <span id="sliderRedValue">N/A</span>
 </div>
-<div class="slidecontainer">
+<div class="slider-container">
   <input type="range" min="0" max="255" value="50" class="slider" id="sliderGreen">
   <span id="sliderGreenValue">N/A</span>
 </div>
-<div class="slidecontainer">
+<div class="slider-container">
   <input type="range" min="0" max="255" value="50" class="slider" id="sliderBlue">
   <span id="sliderBlueValue">N/A</span>
 </div>
+<button id="testButton">Yeet</button>
+</div>
 
+<canvas id="canvas"></canvas>
+
+<script src="funkyTime.js"></script>
 <script src="index.js"></script>
 </body>
 </html>

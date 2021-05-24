@@ -6,3 +6,17 @@ html {
   overflow: hidden;
 }
 
+#hex-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column;
+  height: 200px;
+}
+
+.hex-color-info {
+  height: 50px;
+}
+.slider-container {
+  height: 25px;
+}
