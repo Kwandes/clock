@@ -4,6 +4,8 @@ const startTime = new Date().getTime();
 const canvas = document.getElementById("canvas");
 const context = canvas.getContext("2d");
 
+let timeInterval; // stores the animation loop
+
 function funkyTime() {
   console.log("Let's get funky");
   console.log("Start time: " + startTime);
@@ -48,7 +50,8 @@ function initCanvas() {
 function messWithCanvas() {
   const framesPerSecond = 60;
   let counter = 0;
-  let timeInterval = setInterval(() => {
+  clearInterval(timeInterval);
+  timeInterval = setInterval(() => {
     t = counter / document.getElementById("sliderSpeed").value; // can be used to control the speed of the animation. 100 is slow, 1000 is very fast
     s = 480;
     c = canvas;
