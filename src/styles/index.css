@@ -9,6 +9,7 @@ html {
 #hex-wrapper {
   display: flex;
   align-items: center;
+  justify-content: left;
   flex-flow: column;
   height: 250px;
   width: 20vw;
@@ -21,6 +22,7 @@ html {
 }
 .slider-container {
   height: 25px;
+  width: fit-content;
 }
 
 #speed-slider {
