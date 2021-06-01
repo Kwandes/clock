@@ -1,14 +1,40 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Clock</title>
-    <link rel="stylesheet" href="styles/index.css" />
+    <link rel="stylesheet" href="styles/index.css"></link>
   </head>
-  <body>
-    <canvas id="canvas"> </canvas>
-    <script src="index.js"></script>
-    <script src="flatearth.js"></script>
-  </body>
+<body>
+
+<div id="hex-wrapper">
+<h1 class="hex-color-info">hex color :<span id="hex-value">test</span></h1>
+
+<div class="slider-container">
+  <span style="white-space: pre;">Red    </span>
+  <input type="range" min="0" max="255" value="50" class="slider" id="sliderRed">
+  <span id="sliderRedValue" style="width: 25px; display: inline-block;">N/A</span>
+</div>
+<div class="slider-container">
+  <span style="white-space: pre;">Green </Span>
+  <input type="range" min="0" max="255" value="50" class="slider" id="sliderGreen">
+  <span id="sliderGreenValue" style="width: 25px; display: inline-block;">N/A</span>
+</div>
+<div class="slider-container">
+  <span style="white-space: pre;">Blue   </span>
+  <input type="range" min="0" max="255" value="50" class="slider" id="sliderBlue">
+  <span id="sliderBlueValue" style="width: 25px; display: inline-block;">N/A</span>
+</div>
+<div class="slider-container" id="speed-slider">
+  <span style="white-space: pre;">Speed </span>
+  <input type="range" min="1" max="200" value="40" class="slider" id="sliderSpeed">
+  <span id="sliderSpeedValue" style="width: 25px; display: inline-block;">N/A</span>
+</div>
+<button id="testButton">Yeet</button>
+</div>
+
+<canvas id="canvas"></canvas>
+
+<script src="funkyTime.js"></script>
+<script src="sliders.js"></script>
+<script src="index.js"></script>
+</body>
 </html>
