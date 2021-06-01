@@ -1,32 +1,25 @@
-# Colors are funky, and so is Canvas
-
-A rgb - hex thing with sliders that change the background color.
-
-It also has a funky animation made in Canvas.
-
-Ignore the repo name, it's called switching project ideas mid-development
+# clock
+It goes tick, tok, tick, tok\
+Or it it digital and just shows the numbers, whatever fits you.
 
 ## But why? What are you doing?
 Well, school projects are a thing, and this is part of that.\
 And I am learning javascript canvas while at that
 
 ## What is your goal?
-To finish my mandatory, duh. Code isn't great but it might give you some ideas for your own projects
+A clock, duh. It will show time, maybe even the timezone. But the format...will be based of how I feel.
 
 ## How to install and use
+The app is quite minimalistic at the moment, but may grow in the future.
 
 ### Running the app
-Simply open the index.html in your preferred browser. As long as it's not Internet Explorer it should run properly.
+Simply open the index.html in your preffered browser. As long as it's not Internet Explorer it should run properly.
 
 ### Live Reloading
 The app is livereloading-compatible. Use [Budo](https://github.com/mattdesl/budo) to easy run your app while testing.\
 To run the app run this command in the source root directory _(where your index.js is)_\
 `npx budo index.js --live --open`\
 This will automatically run and open the app in your browser.
-
-### Working version
-
-If you fail to run it locally for any reason (there could be many I guess), you can just use the [github pages version](https://kwandes.github.io/clock/src/index.html)
 
 ## License
 This project is released under an [MIT license](LICENSE.md)

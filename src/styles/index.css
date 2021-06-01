@@ -6,25 +6,3 @@ html {
   overflow: hidden;
 }
 
-#hex-wrapper {
-  display: flex;
-  align-items: center;
-  justify-content: left;
-  flex-flow: column;
-  height: 250px;
-  width: 20vw;
-  position:absolute;
-  left: 40vw;
-}
-
-.hex-color-info {
-  height: 50px;
-}
-.slider-container {
-  height: 25px;
-  width: fit-content;
-}
-
-#speed-slider {
-  display: none;
-}
